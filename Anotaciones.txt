@@ -1,0 +1,179 @@
+Prerequisitos
+1 - Tener instalado Node y NPM
+
+
+Instalando el entorno
+1 - Instalar:
+    -   npm install --save create-react-app -g 
+    -   create-react-app mi-nueva-app
+
+
+2 ???
+    -   npm install --save react
+    -   npm install --save react-dom
+
+
+----------------------------------------------
+
+PARA ACCEDER:
+
+    - ejecutar en terminal
+        npm run start
+
+    - acceder a:
+        localhost:3000
+
+----------------------------------------------
+
+React
+
+ - Es DECLARATIVO (no sería imperativo)
+ - Basado en COMPONENTES
+
+ - Divide la interfaz en trozos mas pequeños y reusables.
+ - Puedes crear nuevos componentes usando componentes mas pequeños.
+ - Cada componente encapsula su estado.
+ - Codigo mas reusable , pequeño y mantenible.
+ 
+"Programacion reactiva"
+ - Cada componente "reacciona" y se vuelve a renderizar cuando se produce un cambio de estado o le llegan nuevas propiedades.
+
+Eventos sintéticos.
+- Abstraccion de los eventos nativos de los navegadores.
+- Compatibilidad cross browsing sin necesidad de mas librerias.
+- Soporte para todos los eventos que puedas necesitar desde click, double click, hasta eventos moviles como touchstart y touchend.
+
+Server Side Rendering
+- Renderiza tu aplicacion de React en el servidor, perfecto para SEO y performance.
+
+
+################################################################
+Seccion 3, Clase 10
+
+
+Esto:
+    const elemento = <h1> Hola mundo </h1>
+
+Se traduce en React como esto:
+    "use strict";
+
+    var elemento = React.createElement(
+      "h1",
+      null,
+      " Hola mundo "
+    );
+
+
+- Para que una expresion de JS sea EVALUDA por REACT, solo tenemos que envolverla entre '{ }'.
+    Ej:
+        const elemento = <h1> Hola, tengo { 25 + 5 } anios </h1>
+
+    Resultado:
+        "use strict";
+
+        var elemento = React.createElement(
+            "h1",
+            null,
+            " Hola, tengo ",
+            25 + 5,
+            " anios "
+        );
+  
+
+- Se puede utilizar CONDICIONALES TERNARIOS:
+    Ej:
+        function  multiplicar ( a , b ){ return a * b }
+        const mostrarMultiplicacion = true
+
+        const elemento = <h1> {mostrarMultiplicacion ? multiplicar ( 2 , 2 ) : 'Nada que mostrar' } </h1>
+
+
+
+- Los atributos de una etiqueta se pasan como OBJETO. Si la etiqueta no tiene atributos, devuelve NULL.
+Ej:
+    const miImagen = <img src='http://url-com-imagen.jpg' />
+Resultado:
+    'use strict';
+
+    var miImagen = React.createElement(
+                      'img', 
+                      { src: 'http://url-com-imagen.jpg' }
+                  );
+
+- En JSX, cada VAR solo puede contener UN ELEMENTO. El metodo 'createElement' de React solo acepta un elemento.
+    -> No se pueden tener 2 DIVs separados.
+    -> Si se puede tener 2 DIVs encapsulados por un DIV Padre. 
+- El metodo createElemet: el 1er parametro es la etiqueta,
+                          el segundo, los atributos (null u objeto),
+                          el tercero, son los childrens.
+
+
+
+################################################################
+Seccion 3, Clase 11 -  Componentes ReactJS
+
+################################################################
+Seccion 3, Clase 12 -  Props I - Entendiendo las Props
+
+################################################################
+Seccion 3, Clase 13 -  Props II - Funciones y elementos como props
+
+- Para simplificar el uso de los props, es comun utilizar la desestructuralizacion.
+    - Ej: Si tenemos varios props usamos,
+        const { miProp1 , miProp2 , miProp3 } = this.props
+    - Ahora podemos acceder a cada una, como si fuese una variable separada.
+
+################################################################
+Seccion 3, Clase 14 -  Props III - Inmutabilidad de las Props
+
+- Funciones Puras:
+    -   Siempre devuelve el mismo valor, para los mismos parametros de entrada
+    -   El efecto de la funcion, no produce efectos colaterales fuera de ella:
+            function sumaPura( a , b ){
+                return a + b ;
+            }
+
+    -   Esta funcion Impura, siempre devolvera un valor distinto pese a que los parametros de entrada sean siempre los mismos:
+            function sumaImpura( a , b ){
+                return a + b + Math.random()
+            }
+
+    -   Otra Funcion impura. Utiliza una variable externa + el parametro, para la suma. 
+        Modificando el resultado que devuelve la funcion, dado un mismo parametro:
+            let b = 2
+            function sumaImpura2( a ){
+                b = a + b 
+                return b
+            }
+
+-   React, no permite que se MODIFIQUEN las PROPS, son de SOLO LECTURA, son INMUTABLES. No podemos alterar su valor.
+    EJ:
+        this.props.miTitulo = <h1> Soy un titulo</h1>
+        // Esto tira ERROR. No podemos modificar una PROPS.
+
+->  Todos los componentes que hagamos en REACT, tienen que actuar como FUNCIONES PURAS y NO modificar sus PROPIEDADES.
+
+################################################################
+Seccion 3, Clase 15 -  Props por defecto
+- Para que las props tengan un valor por default, existen las .defaultProps .
+- Si no existe valor asignado a un determinado props, cuando se renderice, estará vacío.
+- defaultProps: Le pasamos un objeto indicando que valor por defecto queremos para cada props.
+    MiTitle.defaultProps = {
+        miTexto : 'Titulo por default'
+    }
+
+
+################################################################
+Seccion 3, Clase 16 - State I - Gestión del estado de ReactJS
+
+- Las PROPS que le pasamos a un COMPONENTE cambian su renderizado.
+- Para que los COMONENTES sean REACTIVOS, y reaccionen a los cambios, necesitamos usar el STATE.
+
+
+
+################################################################
+
+
+
+
+
