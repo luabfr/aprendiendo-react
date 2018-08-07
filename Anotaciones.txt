@@ -166,14 +166,34 @@ Seccion 3, Clase 15 -  Props por defecto
 ################################################################
 Seccion 3, Clase 16 - State I - Gestión del estado de ReactJS
 
+- Debido a la INMUTABILIDAD de las props (no se pueden cambiar las props una vez declaradas), debemos usar STATE para trabajarlas. 
 - Las PROPS que le pasamos a un COMPONENTE cambian su renderizado.
 - Para que los COMONENTES sean REACTIVOS, y reaccionen a los cambios, necesitamos usar el STATE.
 
 
 
 ################################################################
+Seccion 3, Clase 17 - State II - Actualizar estado mediante setState()
+
+- React es DECLARATIVO y REACTIVO.
+    DECLARATIVO porque NO le indicamos COMO debe renderizar, sino QUE debe renderizar.
+    REACTIVO porque reacciona a los cambios de los componentes.
+- No se debe mutar el STATE de nuestros componentes, porque  REACT funciona de manera que optimiza cuando debe hacer los cambios en el arbol de elementos del navegador.
+  Para ello, tiene una cola en la que va priorizando el trabajo que debe realizar para reflejar los cambios de nuestros componentes. Si reescribiesemos todo el tiempo cambios en los STATE, no podría realizar este trabajo.
+- setState() es un metodo ASINCRONO, por lo que no podemos esperar que el cambio de estado ocurra al instante. 
 
 
 
 
+################################################################
+Seccion 3, Clase 18 - State III - Propagación del estado a componentes 
+>>>>>>>>>>NO ENTENDI BIEN ESTE CAPITULO
 
+- React tiene un flujo UNIDIRECCIONAL, esto es: de PADRE a HIJO.
+- Esto supone que si un componente PADRE cambia su estado, sus componentes HIJOS se vuelven a renderizar.
+
+
+################################################################
+Seccion 3, Clase 19 - State IV - Inicializando el estado mediante Props
+
+- 

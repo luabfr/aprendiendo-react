@@ -3,6 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import OtraApp from './OtraApp';  // Seccion 3, Clase 15: .defaultProps
 import AppStateContador from './AppStateContador'; // Seccion 3, Clase 16: Gestión de State
+import AppStateContadorConSetState from './AppStateContadorClase17'; // Seccion 3, Clase 17: Actualizacion de State con setState()
+import AppStateContadorConPropagacion from './AppStateContadorClase18'; // Seccion 3, Clase 17: Actualizacion de State con setState()
+import LeerJSON from './LeerJSON';  // Leer JSON
+
 
 /* Metodo 1 - Esta funcion es un COMPONENTE de nombre Hello ( <Hello /> ) 
 *****************************************************************/
@@ -69,12 +73,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
           <Hello title="Hola, soy un props" />
         </header>
 
         {/* Si pasamos una variable Booleana, por defecto devolvera TRUE*/}
-        <Text 
+        {/* Esto lo comenté par apoder leer el JSON */}
+        {/* <Text 
           arrayOfNumbers={[2,3,10]}
           boolean={true} 
           estaActivado
@@ -83,11 +87,15 @@ class App extends Component {
           objectWithInfo = { { key1 : 'Primer Valor', key2 : 'otro valor' } }
           text='Texto en string/'  
           title={<h1>Este es el titulo</h1>}
-        />        
+        />         
         <hr/>
         <OtraApp />
         < hr / >
         <AppStateContador />
+        <AppStateContadorConSetState/>
+        < AppStateContadorConPropagacion / > */}
+        <hr/>
+        < LeerJSON / >
       </div>
     );
   }
