@@ -3,6 +3,9 @@
 import React , { Component } from 'react'
 
 
+// Directirio para carga de imagen.
+var directorioPublico = process.env.PUBLIC_URL
+
 
 
 class MiTitle extends Component{
@@ -25,6 +28,7 @@ class OtroApp extends Component{
     return(
       <div className="OtroApp">
         <MiTitle miTexto='Otro titulo desde props' />
+        <img src={directorioPublico + '/test.jpg'} alt="logo" /> <br/>
       </div>
     )
   }

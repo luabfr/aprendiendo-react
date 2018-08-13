@@ -196,4 +196,47 @@ Seccion 3, Clase 18 - State III - Propagación del estado a componentes
 ################################################################
 Seccion 3, Clase 19 - State IV - Inicializando el estado mediante Props
 
-- 
+--- 
+
+
+
+################################################################
+Seccion 4, Clase 20 - CONDICIONALES - Intro
+
+- modificar el contenido que renderiza un componente de react según sus props y su states es la base para crear aplicaciones reactivas.
+- Es lo que se conoce como RENDERIZADO CONDICIONAL.
+
+
+
+################################################################
+Seccion 4, Clase 21 - CONDICIONALES - Condicionales en el método Render
+
+
+
+################################################################
+Seccion 4, Clase 22 - CONDICIONALES - Utilizando ternarias
+
+
+
+################################################################
+Seccion 4, Clase 23 - CONDICIONALES - Practica
+
+
+
+################################################################
+Seccion 4, Clase 24 - CONDICIONALES - Trabajando con listas
+
+- listas, colecciones, array.
+
+- Cada descendiente de un ARRAY debe tener una PROPS especial KEY.
+    - La KEY sirve para ayudar a REACT para identificar los elementos y saber cual ha sido actualizado, añadido, o eliminado.
+    - Se debe utilizar una KEY UNICA cuando iteramos un ARRAY.
+    - Puede utilizarse como KEY, el mismo NUMERO del ARRAY 
+
+
+
+
+################################################################
+Seccion 4, Clase 25 - CONDICIONALES - Listas de Array de Objetos
+
+- No se puede acceder a la KEY como a una PROPS normal.

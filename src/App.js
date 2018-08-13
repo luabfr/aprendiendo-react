@@ -6,6 +6,9 @@ import AppStateContador from './AppStateContador'; // Seccion 3, Clase 16: Gesti
 import AppStateContadorConSetState from './AppStateContadorClase17'; // Seccion 3, Clase 17: Actualizacion de State con setState()
 import AppStateContadorConPropagacion from './AppStateContadorClase18'; // Seccion 3, Clase 17: Actualizacion de State con setState()
 import LeerJSON from './LeerJSON';  // Leer JSON
+import ConditionalSection from './sections/conditional'
+import TrabajandoListas from './SeccionCondicional'; // Seccion 4 - Clase 24, 25
+
 
 
 /* Metodo 1 - Esta funcion es un COMPONENTE de nombre Hello ( <Hello /> ) 
@@ -72,7 +75,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <Hello title="Hola, soy un props" />
         </header>
 
@@ -96,6 +99,10 @@ class App extends Component {
         < AppStateContadorConPropagacion / > */}
         <hr/>
         < LeerJSON / >
+        <hr />
+        <TrabajandoListas/>
+        
+        <ConditionalSection/> {/* Clase 20 */}
       </div>
     );
   }
