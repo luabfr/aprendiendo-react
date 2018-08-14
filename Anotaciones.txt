@@ -406,3 +406,4 @@ Seccion 8, Clase 49 - CICLO DE VIDA / Fetch API
 - El uso mas tipico es pedir informacion a una API.
 
 
+// probando gi credential manager for window
