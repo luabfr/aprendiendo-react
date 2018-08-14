@@ -9,6 +9,12 @@ import LeerJSON from './LeerJSON';  // Leer JSON
 import ConditionalSection from './sections/conditional'
 import TrabajandoListas from './SeccionCondicional'; // Seccion 4 - Clase 24, 25
 
+//Secciones Eventos, formularios, proptypes, render, fetch / api, otros  
+import BotonEvento from './Eventos'
+import MiFormulario from './Form'
+import AprendiendoChildren from './Children_PropTypes'
+import MiComponenDidMount from './ComponentDidMount'
+import MiFetchAPI from './ClaseFetch'
 
 
 /* Metodo 1 - Esta funcion es un COMPONENTE de nombre Hello ( <Hello /> ) 
@@ -103,6 +109,13 @@ class App extends Component {
         <TrabajandoListas/>
         
         <ConditionalSection/> {/* Clase 20 */}
+
+        <BotonEvento/>
+        {/* <MiFormulario/>
+        < AprendiendoChildren/>  */}
+        <MiComponenDidMount/>
+        <hr/>
+        <MiFetchAPI/>
       </div>
     );
   }
