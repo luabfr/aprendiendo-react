@@ -8,6 +8,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "2.0.4",
+    "url-parse": "^1.4.3",
     "write-json-file": "^3.0.2"
   },
   "scripts": {
