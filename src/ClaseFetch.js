@@ -60,7 +60,7 @@ class FetchEjemplo extends Component{
 	render(){
 		return(
 			<div>
-				<h4>Fetch Ejemplo / Precio del Bitcoin</h4>
+				<h4>Fetch: Consumiendo API - Precio del Bitcoin</h4>
 				{this._renderizarMonedas() }
 			</div>
 		)
