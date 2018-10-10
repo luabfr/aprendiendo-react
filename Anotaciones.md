@@ -1,8 +1,9 @@
-﻿Prerequisitos
+﻿#REACT-APP
+##Prerequisitos
 1 - Tener instalado Node y NPM
 
 
-Instalando el entorno
+##Instalando el entorno
 1 - Instalar:
     -   npm install --save create-react-app -g 
     -   create-react-app mi-nueva-app
@@ -47,8 +48,7 @@ Server Side Rendering
 - Renderiza tu aplicacion de React en el servidor, perfecto para SEO y performance.
 
 
-################################################################
-Seccion 3, Clase 10
+#Seccion 3, Clase 10
 
 
 Esto:
@@ -109,22 +109,18 @@ Resultado:
 
 
 
-################################################################
-Seccion 3, Clase 11 -  Componentes ReactJS
+#Seccion 3, Clase 11 -  Componentes ReactJS
 
-################################################################
-Seccion 3, Clase 12 -  Props I - Entendiendo las Props
+#Seccion 3, Clase 12 -  Props I - Entendiendo las Props
 
-################################################################
-Seccion 3, Clase 13 -  Props II - Funciones y elementos como props
+#Seccion 3, Clase 13 -  Props II - Funciones y elementos como props
 
 - Para simplificar el uso de los props, es comun utilizar la desestructuralizacion.
     - Ej: Si tenemos varios props usamos,
         const { miProp1 , miProp2 , miProp3 } = this.props
     - Ahora podemos acceder a cada una, como si fuese una variable separada.
 
-################################################################
-Seccion 3, Clase 14 -  Props III - Inmutabilidad de las Props
+#Seccion 3, Clase 14 -  Props III - Inmutabilidad de las Props
 
 - Funciones Puras:
     -   Siempre devuelve el mismo valor, para los mismos parametros de entrada
@@ -153,8 +149,7 @@ Seccion 3, Clase 14 -  Props III - Inmutabilidad de las Props
 
 ->  Todos los componentes que hagamos en REACT, tienen que actuar como FUNCIONES PURAS y NO modificar sus PROPIEDADES.
 
-################################################################
-Seccion 3, Clase 15 -  Props por defecto
+#Seccion 3, Clase 15 -  Props por defecto
 - Para que las props tengan un valor por default, existen las .defaultProps .
 - Si no existe valor asignado a un determinado props, cuando se renderice, estará vacío.
 - defaultProps: Le pasamos un objeto indicando que valor por defecto queremos para cada props.
@@ -163,8 +158,7 @@ Seccion 3, Clase 15 -  Props por defecto
     }
 
 
-################################################################
-Seccion 3, Clase 16 - State I - Gestión del estado de ReactJS
+#Seccion 3, Clase 16 - State I - Gestión del estado de ReactJS
 
 - Debido a la INMUTABILIDAD de las props (no se pueden cambiar las props una vez declaradas), debemos usar STATE para trabajarlas. 
 - Las PROPS que le pasamos a un COMPONENTE cambian su renderizado.
@@ -172,8 +166,7 @@ Seccion 3, Clase 16 - State I - Gestión del estado de ReactJS
 
 
 
-################################################################
-Seccion 3, Clase 17 - State II - Actualizar estado mediante setState()
+#Seccion 3, Clase 17 - State II - Actualizar estado mediante setState()
 
 - React es DECLARATIVO y REACTIVO.
     DECLARATIVO porque NO le indicamos COMO debe renderizar, sino QUE debe renderizar.
@@ -185,46 +178,39 @@ Seccion 3, Clase 17 - State II - Actualizar estado mediante setState()
 
 
 
-################################################################
-Seccion 3, Clase 18 - State III - Propagación del estado a componentes 
+#Seccion 3, Clase 18 - State III - Propagación del estado a componentes 
 >>>>>>>>>>NO ENTENDI BIEN ESTE CAPITULO
 
 - React tiene un flujo UNIDIRECCIONAL, esto es: de PADRE a HIJO.
 - Esto supone que si un componente PADRE cambia su estado, sus componentes HIJOS se vuelven a renderizar.
 
 
-################################################################
-Seccion 3, Clase 19 - State IV - Inicializando el estado mediante Props
+#Seccion 3, Clase 19 - State IV - Inicializando el estado mediante Props
 
 --- 
 
 
 
-################################################################
-Seccion 4, Clase 20 - CONDICIONALES - Intro
+#Seccion 4, Clase 20 - CONDICIONALES - Intro
 
 - modificar el contenido que renderiza un componente de react según sus props y su states es la base para crear aplicaciones reactivas.
 - Es lo que se conoce como RENDERIZADO CONDICIONAL.
 
 
 
-################################################################
-Seccion 4, Clase 21 - CONDICIONALES - Condicionales en el método Render
+# Seccion 4, Clase 21 - CONDICIONALES - Condicionales en el método Render
 
 
 
-################################################################
-Seccion 4, Clase 22 - CONDICIONALES - Utilizando ternarias
+# Seccion 4, Clase 22 - CONDICIONALES - Utilizando ternarias
 
 
 
-################################################################
-Seccion 4, Clase 23 - CONDICIONALES - Practica
+# Seccion 4, Clase 23 - CONDICIONALES - Practica
 
 
 
-################################################################
-Seccion 4, Clase 24 - CONDICIONALES - Trabajando con listas
+# Seccion 4, Clase 24 - CONDICIONALES - Trabajando con listas
 
 - listas, colecciones, array.
 
@@ -236,8 +222,7 @@ Seccion 4, Clase 24 - CONDICIONALES - Trabajando con listas
 
 
 
-################################################################
-Seccion 4, Clase 25 - CONDICIONALES - Listas de Array de Objetos
+# Seccion 4, Clase 25 - CONDICIONALES - Listas de Array de Objetos
 
 - No se puede acceder a la KEY como a una PROPS normal.
 
@@ -246,9 +231,7 @@ Seccion 4, Clase 25 - CONDICIONALES - Listas de Array de Objetos
 
 
 
-################################################################
-################################################################
-Seccion 6, Clase 33 - EVENTOS  - Eventos soportados
+# Seccion 6, Clase 33 - EVENTOS  - Eventos soportados
 
 - React pose gran cantidad de EVENTOS soportados.
 - Para ver todos los eventos puede verse la documentaciòn.
@@ -259,15 +242,13 @@ Seccion 6, Clase 33 - EVENTOS  - Eventos soportados
     - otros...
 
 
-#################################################################
-Seccion 6, Clase 36 - EVENTOS - Entendiendo REF
+# Seccion 6, Clase 36 - EVENTOS - Entendiendo REF
 
 - Todos los COMPONENTES en REACT tienen un ATRIBUTO especial llamado REF
 - REF, sirve para recuperar la referencia del elemento en el DOM.
 - Hay mejores formas de manejar Formularios SIN utilizar REF.
 
-#################################################################
-Seccion 6, Clase 38 - EVENTOS y FORMULARIOS - Componentes Controlados
+# Seccion 6, Clase 38 - EVENTOS y FORMULARIOS - Componentes Controlados
 
 - A la forma mas básica y similar a la forma de HTML de manejar formularios, se le llama: COMPONENTES DESCONTROLADOS.
     - Se le llama asi, porque no tenemos ningun control en el componente sobre el valor de los campos, y para recuperarlos, tenemos que consultar al arbol de elementos.
@@ -278,8 +259,7 @@ Seccion 6, Clase 38 - EVENTOS y FORMULARIOS - Componentes Controlados
 
 
 
-#################################################################
-Seccion 7 , Clase 39/40/41 - CHILDREN - De los componentes de ReactJS
+# Seccion 7 , Clase 39/40/41 - CHILDREN - De los componentes de ReactJS
 
 - Children es un PROP ESPECIAL que nos devuelve  el contenido que se encuentra dentro de nuestras etiquetas de apertura y cierre.
     - Se suele utililzar para construir Layout o plantillas.
@@ -289,8 +269,7 @@ Seccion 7 , Clase 39/40/41 - CHILDREN - De los componentes de ReactJS
 
 
 
-#################################################################
-Seccion 7, clase 42 - PROPTYPES - Desarrollando con PropTypes
+# Seccion 7, clase 42 - PROPTYPES - Desarrollando con PropTypes
 
 - Sirven para saber que TIPO de valor es un PROPS.
 - Es una DEPENDENCIA EXTERNA.
@@ -298,9 +277,7 @@ Seccion 7, clase 42 - PROPTYPES - Desarrollando con PropTypes
                            ('-SE' es igual a '--save')
 
 
-#################################################################
-#################################################################
-Seccion 8, Clase 43 / 44 - CICLO DE VIDA 
+# Seccion 8, Clase 43 / 44 - CICLO DE VIDA 
 
 - Diferentes estados de los componetes de React, y como ejecutatr cada uno de ellos.
 
@@ -329,8 +306,7 @@ Fase de Desmontaje:
     - AMBAS, sirven para evitar ERRORES si se llaman a elementos que ya NO estàn disponibles.
 
 
-###########
-Seccion 8, Clase 45 - CICLO DE VIDA / El Constructor
+# Seccion 8, Clase 45 - CICLO DE VIDA / El Constructor
 
  - En FASE DE MONTAJE: El primer método que se ejecuta es el CONSTRUCTOR.
     - Se Ejecuta antes de montal el componente.
@@ -349,8 +325,7 @@ Seccion 8, Clase 45 - CICLO DE VIDA / El Constructor
         - Suele ser necesario en los metodos que manejan eventos.
         - Esto tambien se soluciona utilizando ARROW FUNCTION.
 
-###########
-Seccion 8, Clase 45 - CICLO DE VIDA / ComponentWillMount
+# Seccion 8, Clase 45 - CICLO DE VIDA / ComponentWillMount
 
 - Se ejecuta una sola vez.
 - Se invoca justo antes de montar el componente y antes de render()
@@ -360,8 +335,8 @@ Seccion 8, Clase 45 - CICLO DE VIDA / ComponentWillMount
 - Si quisieramos utilizar un API, para renderizarla, necesitamos primero tener acceso al elemento del DOM. Para esto es util que primero se ejecute el RENDER, asi luego podemos utilizar los datos de la API para actualizar los STATE del componente y re-renderizar el componente actualizado.  
 
 
-###########
-Seccion 8, Clase 47 - CICLO DE VIDA / Render
+
+# Seccion 8, Clase 47 - CICLO DE VIDA / Render
 
 - El unico metodo obligatorio en nuestro componente.
 - Retorna los elementos que queremos mostrar en la interfaz.
@@ -380,8 +355,7 @@ Seccion 8, Clase 47 - CICLO DE VIDA / Render
     - etc.
 
 
-###########
-Seccion 8, Clase 48 - CICLO DE VIDA / ComponentDidMount
+# Seccion 8, Clase 48 - CICLO DE VIDA / ComponentDidMount
 
 - Se ejecuta tras el RENDERIZADO del componente.
 - Cuando se ejecuta, significa que existe una representacion (de nuestro componente) en el DOM.
@@ -397,8 +371,8 @@ DEBUGGER: sirve para ver en el navegador, paso a paso lo que va sucediendo. (Pau
 
 
 
-###########
-Seccion 8, Clase 49 - CICLO DE VIDA / Fetch API
+
+# Seccion 8, Clase 49 - CICLO DE VIDA / Fetch API
 
 - Fetch, de JS, provee una interfaz para peticion de recursos remotos. 
 - Compatible con todos los navegadores modernos.
