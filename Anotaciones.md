@@ -85,7 +85,7 @@ Se traduce en React como esto:
         function  multiplicar ( a , b ){ return a * b }
         const mostrarMultiplicacion = true
 
-        const elemento = <h1> {mostrarMultiplicacion ? multiplicar ( 2 , 2 ) : 'Nada que mostrar' } </h1>
+        const elemento = <h1> { mostrarMultiplicacion ? multiplicar ( 2 , 2 ) : 'Nada que mostrar' } </h1>
 
 
 
@@ -162,7 +162,7 @@ Resultado:
 
 - Debido a la INMUTABILIDAD de las props (no se pueden cambiar las props una vez declaradas), debemos usar STATE para trabajarlas. 
 - Las PROPS que le pasamos a un COMPONENTE cambian su renderizado.
-- Para que los COMONENTES sean REACTIVOS, y reaccionen a los cambios, necesitamos usar el STATE.
+- Para que los COMPONENTES sean REACTIVOS, y reaccionen a los cambios, necesitamos usar el STATE.
 
 
 
@@ -171,7 +171,7 @@ Resultado:
 - React es DECLARATIVO y REACTIVO.
     DECLARATIVO porque NO le indicamos COMO debe renderizar, sino QUE debe renderizar.
     REACTIVO porque reacciona a los cambios de los componentes.
-- No se debe mutar el STATE de nuestros componentes, porque  REACT funciona de manera que optimiza cuando debe hacer los cambios en el arbol de elementos del navegador.
+- No se debe mutar el STATE de nuestros componentes, porque REACT funciona de manera que optimiza cuando debe hacer los cambios en el arbol de elementos del navegador.
   Para ello, tiene una cola en la que va priorizando el trabajo que debe realizar para reflejar los cambios de nuestros componentes. Si reescribiesemos todo el tiempo cambios en los STATE, no podría realizar este trabajo.
 - setState() es un metodo ASINCRONO, por lo que no podemos esperar que el cambio de estado ocurra al instante. 
 
@@ -193,7 +193,7 @@ Resultado:
 
 #Seccion 4, Clase 20 - CONDICIONALES - Intro
 
-- modificar el contenido que renderiza un componente de react según sus props y su states es la base para crear aplicaciones reactivas.
+- Modificar el contenido que renderiza un componente de react según sus props y su states es la base para crear aplicaciones reactivas.
 - Es lo que se conoce como RENDERIZADO CONDICIONAL.
 
 
@@ -242,11 +242,14 @@ Resultado:
     - otros...
 
 
+
 # Seccion 6, Clase 36 - EVENTOS - Entendiendo REF
 
 - Todos los COMPONENTES en REACT tienen un ATRIBUTO especial llamado REF
 - REF, sirve para recuperar la referencia del elemento en el DOM.
 - Hay mejores formas de manejar Formularios SIN utilizar REF.
+
+
 
 # Seccion 6, Clase 38 - EVENTOS y FORMULARIOS - Componentes Controlados
 
@@ -264,7 +267,7 @@ Resultado:
 - Children es un PROP ESPECIAL que nos devuelve  el contenido que se encuentra dentro de nuestras etiquetas de apertura y cierre.
     - Se suele utililzar para construir Layout o plantillas.
     - Util para componentes de UI reusables.
-- PropTypes: Una forma de validar los ipos de datos que le pasamos a nuestros componentes.
+- PropTypes: Una forma de validar los tipos de datos que le pasamos a nuestros componentes.
     - (Similar a cuando declaramos un TIPO de variable: string, int, etc.)
 
 
@@ -277,53 +280,57 @@ Resultado:
                            ('-SE' es igual a '--save')
 
 
+
 # Seccion 8, Clase 43 / 44 - CICLO DE VIDA 
 
-- Diferentes estados de los componetes de React, y como ejecutatr cada uno de ellos.
+- Diferentes estados de los componetes de React, y como ejecutar cada uno de ellos.
 
-// DIFERENTS FASES DE EJECUCIÒN POR LAS QUE PASA UN COMPONENTE DE REACT
-- El Ciclo de Vida de los componentes se divide en 3 FASES:
-    -   Fase de MONTAJE
-    -   Fase de ACTUALIZACION
-    -   Fase de DESMONTAJE
+// DIFERENTES FASES DE EJECUCIÒN POR LAS QUE PASA UN COMPONENTE DE REACT
+• El Ciclo de Vida de los componentes se divide en 3 FASES:
+    •   Fase de MONTAJE
+    •   Fase de ACTUALIZACIÓN
+    •   Fase de DESMONTAJE
 
-Fase de Montaje:
+• Fase de Montaje:
     - Es la primera que se ejecuta.
-    - Se ejecuta siempre, y solo lo hace una vez.
+    - Se ejecuta siempre, y solo lo hace una vez. (Similar al void setup() de Arduino)
     - Es la encargada de construir el componente, con su estado inicial, y obtener las props que se la han pasado.
-    - Como buena practica: si estamos utilizando metodos de clase que accedan al contexto, tenemos que BINDEARLO aqui.
-    - Primera ejecucion de render().
+    - Como buena práctica: si estamos utilizando métodos de clase que accedan al contexto, tenemos que BINDEARLO aqui. (Esto no es necesario, si se utilizan Arrow Funcitons).
+    - Primera ejecución de render().
     - Termina con el componente montado en el DOM.
 
-Fase de Actualizaciòn:
-    - Pro defecto, se ejecuta cada vez que recibe props o se actualiza un state.
+• Fase de Actualización:
+    - Por defecto, se ejecuta cada vez que recibe props o se actualiza un state.
     - Podemos controlar cuando el componente necesita renderizarse de nuevo. 
 
 
-Fase de Desmontaje:
+• Fase de Desmontaje:
     - Sirve para eliminar cualquier LISTENERS que hayamos creado.
-    - Sirve para eliminar metodos que hagan referencias a elementos que puedan NO estar disponibles en el DOM.
-    - AMBAS, sirven para evitar ERRORES si se llaman a elementos que ya NO estàn disponibles.
+    - Sirve para eliminar métodos que hagan referencias a elementos que puedan NO estar disponibles en el DOM.
+    - AMBAS, sirven para evitar ERRORES si se llaman a elementos que ya NO están disponibles.
+
 
 
 # Seccion 8, Clase 45 - CICLO DE VIDA / El Constructor
 
  - En FASE DE MONTAJE: El primer método que se ejecuta es el CONSTRUCTOR.
-    - Se Ejecuta antes de montal el componente.
-    - Inicializar el state del componente.
-    - Bindear contexto de los metodos.
-    - NO SE DEBE LLAMAR A setState(), ya que el STATE no puede ser todavia actualizado.
-    - Aunque no declaremos el constructor, implicitamente viene declarado, solo con el metodo super().
-    - super() : Es necesario que tambien le pasemos las PROPS.
+    - Se Ejecuta antes de montar el componente.
+    - Inicializa el state del componente.
+    - Bindear contexto de los métodos.
+    - NO SE DEBE LLAMAR A setState(), ya que el STATE no puede ser todavía actualizado.
+    - Aunque no declaremos el constructor, implicitamente viene declarado, solo con el método super().
+    - super() : Es necesario que también le pasemos las PROPS.
         constructor( misProps ){
             super( misProps )
             this.state : {...}
         }
     
-    -BIND: Sirve para enlazar el contexto para las funciones que necesiten acceder a las propiedades de la clase cuando se ejecuta en un contexto diferente.
+    - BIND: Sirve para enlazar el contexto para las funciones que necesiten acceder a las propiedades de la clase cuando se ejecuta en un contexto diferente.
         - this.miFuncion = this.miFuncion.bind(this) 
-        - Suele ser necesario en los metodos que manejan eventos.
+        - Suele ser necesario en los métodos que manejan eventos.
         - Esto tambien se soluciona utilizando ARROW FUNCTION.
+
+
 
 # Seccion 8, Clase 45 - CICLO DE VIDA / ComponentWillMount
 
@@ -338,11 +345,11 @@ Fase de Desmontaje:
 
 # Seccion 8, Clase 47 - CICLO DE VIDA / Render
 
-- El unico metodo obligatorio en nuestro componente.
+- El único método obligatorio en nuestro componente.
 - Retorna los elementos que queremos mostrar en la interfaz.
-- NO SE DEBE LLAMAR a setState, provocaria un loop infinito.
-- Debe ser simpre puro.
-- Solo se debe encargar de convertir nuestras proprs y state en una representacioon visual en nuestra aplicacion.
+- NO SE DEBE LLAMAR a setState(), provocaria un loop infinito.
+- Debe ser siempre puro.
+- Solo se debe encargar de convertir nuestras props y state en una representación visual en nuestra aplicación.
 - Evitar operaciones y evaluacion, pues penaliza el rendimiento de la app.
 - No necesariamente tiene que devolver (return) un elemento HTML.
 - Tambien puede devolver:
@@ -350,22 +357,23 @@ Fase de Desmontaje:
     - un NULL, 
     - un CONDICIONAL, 
     - un ARRAY (FRAGMENTOS) 
-        - Renderizado de FRAGMENTOS: Se renderiza una lista de elmentos (mediante un array).
-        - Esto evita que tengamos que agregar un DIV que sirva solo de contenedor de los compoententes y elementos que queremos agregar.
+        - Renderizado de FRAGMENTOS: Se renderiza una lista de elementos (mediante un array).
+        - Esto evita que tengamos que agregar un DIV que sirva solo de contenedor de los componetentes y elementos que queremos agregar.
     - etc.
+
 
 
 # Seccion 8, Clase 48 - CICLO DE VIDA / ComponentDidMount
 
 - Se ejecuta tras el RENDERIZADO del componente.
-- Cuando se ejecuta, significa que existe una representacion (de nuestro componente) en el DOM.
-- Sirve para añadir llamadas para recuprar datos del servidor y APIs
-- Se pueden escuchar eventos. Y si lo hacemos, tenemos que borrar esta suscripcion en el metodo ComponenDidUnmount (que se ejecuta antes de desmontar el componente)
+- Cuando se ejecuta, significa que ya existe una representación (de nuestro componente) en el DOM.
+- Sirve para añadir llamadas para recuperar datos del servidor y APIs.
+- Se pueden escuchar eventos. Y si lo hacemos, tenemos que borrar esta suscripción en el método ComponenDidUnmount (que se ejecuta antes de desmontar el componente) (de otro modo, seguiriamos suscriptos a la escucha de eventos en elementos que ya no existen)
 - Se puede ejecutar setState()
     - Si ejecutamos setState(), se vuelve a ejecutar RENDER.
 
-- La suscripcion a un EVENTO (listeners) en ComponentDidMount, no serà eliminada automatica por REACT, cuando este componente desaparezca. 
-    - Osea: si se elemina ese COMPONENTE, el LISTENER del EVENTO, sigue andando.
+- La suscripción a un EVENTO (listeners) en ComponentDidMount, no será eliminada automática por REACT, cuando este componente desaparezca. 
+    - Osea: si se elimina ese COMPONENTE, el LISTENER del EVENTO, sigue andando.
 
 DEBUGGER: sirve para ver en el navegador, paso a paso lo que va sucediendo. (Pausa la carga, y tiene un botn PLAY para seguir)
 
@@ -374,10 +382,10 @@ DEBUGGER: sirve para ver en el navegador, paso a paso lo que va sucediendo. (Pau
 
 # Seccion 8, Clase 49 - CICLO DE VIDA / Fetch API
 
-- Fetch, de JS, provee una interfaz para peticion de recursos remotos. 
+- Fetch, de JS, provee una interfaz para petición de recursos remotos. 
 - Compatible con todos los navegadores modernos.
 - Gestiona la respuesta en forma de PROMESAS.
-- El uso mas tipico es pedir informacion a una API.
+- El uso mas típico, es pedir información a una API.
 
 
 // probando git credential manager for window
