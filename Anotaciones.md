@@ -389,3 +389,134 @@ DEBUGGER: sirve para ver en el navegador, paso a paso lo que va sucediendo. (Pau
 
 
 // probando git credential manager for window
+
+
+# Seccion 8, Clase 50/51 - CICLO DE VIDA / ComponentWillReceiveProps()
+
+CICLO DE ACTUALIZACIÓN
+- Se ejecuta cuando nuestro componente:
+    1. Va a recibir nuevas props.
+    2. Va a actualizar su state.
+- Solo se ejecuta si nuestro componente ha recibido nuevas props, y NO cuando su state ha cambiado.
+-  Util cuando se usa las props para formar el state del componente.
+-	Se puede usar setState y a veces no provoca otro render.
+
+- Recibe el parametro 'nextProps'.
+
+-> Cuando actualizamos el STATE de una PROPS, no necesariamente se vuelve a RENDERIZAR el COMNPONENTE. 
+-> Si queremos que efectivamente nuestro COMPONENTE se vuelva a RENDERIZAR cuando ACTUALIZAMOS el STATE de una PROPS,
+   podemos utilizar ComponentWillReceiveProps().
+-> Esto le indicará a nuestro componente que debe volver a RENDERIZARSE.
+
+
+# Seccion 8, Clase 52/53 - CICLO DE ACTUALIZACION / ShouldComponentUpdate()  &   PureComponents
+
+    -   SIRVE PARA EVITAR EL RE-RENDERIZADOS INNECESARIOS.
+    -   Se ejecuta luego de la ejecución de ComponentWillReceiveProps().
+    -   Se ejecuta antes de actualiza el componente.
+    -   Determina si el componete se debe actualizar
+    -   Debe devolver un booleano (por defecto, siempre es true).
+        -   Si no se declara este evento, por defecto será TRUE.
+    -   No se debe llamar a setState.
+
+### PureComponent
+    -   Hace lo mismo que ShouldComponentUpdate(), pero sin necesidad de declararlo.
+    -   Para utilizarlo:
+        1. Importarlo de la libreria React: 
+            >    import React, { Component , PureComponent } from 'react'
+        2. Declarar nuestro componente:
+            >   class MiComponente extends PureComponents(){}
+
+    -   PureComponent solo hace una comparación superficial. Por lo que si las Props o el State del componente son objetos complejos, con mas de un nivel, puede devolvernos FALSOS POSITIVOS.
+
+
+# Seccion 8, Clase 54 - CICLO DE ACTUALIZACION / ComponentWillUpdate()
+    *   si shouldComponentUpdate() hubiese devuelto FALSE, el ciclo de actualizacion ya hubiese terminado. Pero si ha devuelto TRUE, entonces el ciclo, continua.
+    
+    -   Se ejecuta antes de actualizar el componente.
+    -   No se ejecuta si shouldComponentUpdate devolvió FALSE.
+    -   Muy pocos casos prácticos, solo para posibles animaciones.
+    -   NO se debe llamar a setState o entrará en un loop infinito.
+    -   Se ejecuta justo antes del metodo render(), recibiendo 2 parametros: nextProps y nextState.
+
+
+# Seccion 8, Clase 55 - CICLO DE ACTUALIZACION / ComponentDidUpdate()
+    -   Luego del METODO ComponentWillUpdate() se ejecutará denuevo el metodo render().
+    -   Luego de esto, se ejecutara componentDidUpdate(), al que le llegará las props y state que teniamos antes de ejecutar la actualización.
+    -   Sirve para ejecutar funciones de librerias externas, usar el nuevo DOM o hacer llamadas externas.
+    -   No se debe llamar a setState o entrará en un loop infinito. 
+
+
+
+# Seccion 8, Clase 56 - CICLO DE VIDA / componentWillUnmount()
+    -   Se ejecuta solo si el componente deja de renderizarse en la aplicacion. 
+    -   Solo tiene una fase.
+    
+    -   Se ejecuta justo antes de desmontar el componente. 
+    -   Permite eliminar suscipciones de eventos, cancelar peticiones, limpiar intervalos y liberar recursos.
+    -   No se debe llamar a setState.
+
+
+# Seccion 8, Clase 57 - CICLO DE VIDA / componentDidCatch()
+    -   Es un ciclo de error, fue introducido en la version 16 de React.
+    -   Nos permite recuperar, a nuestra aplicacion, de errores inesperados.
+    -   Solo se ejecuta si tenemos un ERROR o EXCEPTION.
+    -   Recibe el ERROR y toda la informacion.
+    -   Se puede actualizar el state para cambiar el comportamiento del componente.
+    -   Nos permite capturar un error o excepcion de nuestros componentes Children para evitar que al producirse alguno de ellos, se desmonte completamente el componente padre.
+    -   Recibe los errores de los componentes childrens de nuestro componente, y no, de este.
+    -   No captura los errores en los metodos que son disparados por un evento (como una funcion que maneja el click de un boton), tampoco en eventos asincronos.
+    -   Si un componente tiene un error inesperado, se desmontara totalmente de nuestra aplicacion.
+    - Recibe 2 parametros:  el ERROR, y la INFO (del ERROR).
+
+
+
+
+
+
+
+# Seccion 9, Clase 58 - BUENAS PRÁCTICAS - Composicion vs Herencia
+    
+• COMPOSICION vs HERENCIA
+    -   Se recomienda no utilizar tanto la HERENCIA, es mejor utilizar COMPOSICIÓN.
+    * Esto es: no crear tantos componentes partiendo de componentes padres, osea, por herencia.
+
+
+# Seccion 9, Clase 60 - BUENAS PRÁCTICAS - Stateless components
+
+    -   Una forma alternativa de declarar un componete es hacerlo como una function:
+        > function MiArticulo(props){
+            return (
+                <div id="contenedor">
+                    <h2>{props.elTitulo}</h2>
+                    <p>{props.elParrafo}</p>
+                </div>
+            )
+        }
+    *(Las props que llegan como parametros, tiene que ser un objeto)
+
+    -   Lo mismo pero con Arrow Function:
+        > const MiComponenteBoton = ( { prop1 , prop2 } ) => (
+           <button style={ borderColor: prop1 }> 
+                { prop2 }
+           </button>
+        )
+
+
+
+
+    -   Este tipo de componentes se llama STATELESS, ya que no se puede tener un STATE interno.
+    -   No se necesita utilizar THIS para acceder al contexto.
+    -   Otorgan un código mas limpio y legible.
+    -   NO pueden acceder a los METODOS del CICLO DE VIDA del componente. 
+
+# Seccion 9, Clase 61 - BUENAS PRÁCTICAS - Proptypes en Stateless components
+
+    -   A los TATELESS COMPONENTS también se les llama COMPONENTES FUNCIONALES PUROS.
+    
+    - bla bla bla
+
+
+# Seccion 9, Clase 62 - BUENAS PRÁCTICAS - Patrón Contenedor / Contenido
+    -   Es una manera de pensar los componentes, (un PATRÓN), a la hora de crearlos.
+    -   Dividirlos entre: CONTENEDORES (lógicos) y CONTENIDO (presentacionales).

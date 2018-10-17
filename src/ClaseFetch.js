@@ -21,9 +21,10 @@ class FetchEjemplo extends Component{
 		//console.log("FetchEjemplo / componentDidMount")
 		
 
-		// Fetch, devolvera una PROMESA que tendra la respuesta de la peticion.
-		// Es una serie de metodos que sirve para parsearla en el tipo de datos que queremos.
-		// Fetch es algo propio de JS, y no solo de REACT. (Ver: https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch)
+		// Fetch, devolvera una PROMESA que tendra la respuesta de la petición.
+		// Fetch, es una serie de métodos que sirve para parsearla en el tipo de datos que queremos.
+		// Fetch es algo propio de JS, y no solo de REACT. 
+		// (Ver: https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch)
 		fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
 			// Obtenemos la respuesta, en forma de un objeto JSON.
 			.then( respuesta => respuesta.json() )
